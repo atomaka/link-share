@@ -1,0 +1,17 @@
+.link {
+  padding: 5px;
+  background: #fff;
+}
+
+.link:nth-of-type(odd) {
+  background: #e7e7e7
+}
+
+.controls {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.fc-time {
+  display: none;
+}

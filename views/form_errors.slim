@@ -1,0 +1,4 @@
+- if @link.errors.any?
+  ul
+    - @link.errors.full_messages.each do |error|
+      li= error

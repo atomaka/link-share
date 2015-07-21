@@ -1,0 +1,37 @@
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  stage: test
+  script:
+    - apt-get update -qy
+    - apt-get install -y nodejs libqtwebkit-dev qt4-qmake sqlite3 libsqlite3-dev xvfb
+    - bundle install --path /cache
+    - RACK_ENV=test bundle exec rake db:create
+    - RACK_ENV=test bundle exec rake db:migrate
+    - RACK_ENV=test xvfb-run -a bundle exec rspec
+  tags:
+    - rails
+build:
+  stage: build
+  script:
+    - docker build -t atomaka/link-share .
+  except:
+    - tags
+  tags:
+    - docker
+deploy:
+  stage: deploy
+  script:
+    - VERSION=$(git describe --tags)
+    - docker build -t atomaka/link-share .
+    - docker tag atomaka/link-share:latest docker.atomaka.com/atomaka/link-share:$VERSION
+    - docker tag atomaka/link-share:latest docker.atomaka.com/atomaka/link-share:latest
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD -e me@atomaka.com docker.atomaka.com
+    - docker push docker.atomaka.com/atomaka/link-share
+  only:
+    - tags
+  tags:
+    - docker

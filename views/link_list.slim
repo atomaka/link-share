@@ -1,0 +1,14 @@
+.links
+- @links.each do |link|
+  .row.link
+    .col-md-9
+      a href="#{link.url}" #{link.title}
+    .col-md-3
+      - if link.sent_at
+        = link.sent_at
+      - else
+        ul.list-inline style="margin: 0"
+            li
+              a href="/send?id=#{link.id}" Send
+            li
+              a href="/destroy?id=#{link.id}" Delete

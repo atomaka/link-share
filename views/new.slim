@@ -1,0 +1,9 @@
+== slim :form_errors
+form action="/" method="post"
+  .form-group
+    label for="link_title" Title
+    input type="text" name="link[title]" id="link_title" class="form-control" value="#{@link.title}"
+  .form-group
+    label for="link_url" Link
+    input type="text" name="link[url]" id="link_url" class="form-control" value="#{@link.url}"
+  button type="submit" class="btn btn-primary" Submit

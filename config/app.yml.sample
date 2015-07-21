@@ -1,0 +1,3 @@
+secret: YOUR_SECRET
+users:
+  USERNAME: PASSWORD
