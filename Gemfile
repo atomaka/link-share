@@ -23,4 +23,5 @@ group :development do
   gem 'launchy'
   gem 'pry'
   gem 'rerun'
+  gem 'rake'
 end
