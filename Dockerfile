@@ -14,4 +14,5 @@ COPY Gemfile* ./
 RUN bundle install --path=vendor/bundle --jobs=4 --without=development test
 COPY . /app
 
+EXPOSE 9292
 CMD bundle exec rackup -o 0.0.0.0
