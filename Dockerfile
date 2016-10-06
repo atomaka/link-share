@@ -5,7 +5,7 @@ RUN export LANG=en_US.UTF-8 && \
     export LC_ALL=en_US.UTF-8
 
 RUN apk update \
-    && apk add build-base ruby-dev sqlite-dev \
+    && apk add build-base ruby-dev sqlite-dev ca-certificates \
     && apk add ruby ruby-bundler ruby-io-console \
     && rm -rf /var/cache/apk*
 

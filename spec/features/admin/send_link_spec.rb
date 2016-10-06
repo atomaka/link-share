@@ -10,7 +10,10 @@ describe 'Admin Send Links' do
 
   context 'when logged in' do
     let!(:links) { 10.times.collect { create(:link) } }
-    before(:each) { basic_auth 'admin', 'password' }
+    before(:each) do
+      basic_auth 'admin', 'password'
+      allow(SmsNotifier).to receive(:notify)
+    end
 
     it 'should allow sending of a link' do
       visit '/manage'
@@ -29,6 +32,12 @@ describe 'Admin Send Links' do
         .click
 
       expect(page).to_not have_content(link.title)
+    end
+
+    it 'attempts to send an SMS message' do
+      visit '/manage'
+      first('a', text: 'Send').click
+      expect(SmsNotifier).to have_received(:notify)
     end
   end
 end

@@ -11,6 +11,9 @@ gem 'validate_url'
 
 gem 'slim'
 
+gem 'aws-sdk', '~> 2'
+gem 'dotenv'
+
 gem 'bigdecimal'
 # alpine linux does not include a method to determine the timezone
 gem 'tzinfo-data'

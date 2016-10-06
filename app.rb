@@ -36,6 +36,7 @@ get '/send' do
   @link = Link.find(params[:id])
 
   @link.mark_sent
+  SmsNotifier.notify(@link)
 
   flash[:success] = 'Link has been marked as sent'
   redirect '/manage'

@@ -7,3 +7,5 @@ before_script:
   - RACK_ENV=test bundle exec rake db:migrate
 script:
   - RACK_ENV=test bundle exec rspec
+env:
+  - AWS_REGION=us-east-1

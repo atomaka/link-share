@@ -16,6 +16,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.2)
+    aws-sdk (2.2.3)
+      aws-sdk-resources (= 2.2.3)
+    aws-sdk-core (2.2.3)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.2.3)
+      aws-sdk-core (= 2.2.3)
     backports (3.6.6)
     bigdecimal (1.2.7)
     builder (3.2.2)
@@ -33,11 +39,13 @@ GEM
     coderay (1.1.0)
     database_cleaner (1.4.1)
     diff-lcs (1.2.5)
+    dotenv (2.1.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     ffi (1.9.10)
     hitimes (1.2.2)
     i18n (0.7.0)
+    jmespath (1.1.3)
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -123,9 +131,11 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  aws-sdk (~> 2)
   bigdecimal
   capybara-webkit
   database_cleaner
+  dotenv
   factory_girl
   launchy
   pry
