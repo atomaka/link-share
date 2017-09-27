@@ -1,7 +1,7 @@
 require 'rack/test'
 require 'rspec'
 require 'capybara/rspec'
-require 'capybara/webkit'
+require 'capybara/poltergeist'
 require 'factory_girl'
 require 'database_cleaner'
 
@@ -18,7 +18,7 @@ module TestingMixin
   include FactoryGirl::Syntax::Methods
 
   Capybara.app = Sinatra::Application
-  Capybara.javascript_driver = :webkit
+  Capybara.javascript_driver = :poltergeist
   Capybara.asset_host = 'http://localhost:3000'
 
   FactoryGirl.definition_file_paths = %w{./factories ./test/factories ./spec/factories}
@@ -39,8 +39,8 @@ module TestingMixin
   end
 end
 
-Capybara::Webkit.configure do |config|
-  config.allow_unknown_urls
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, js_errors: false)
 end
 
 RSpec.configure do |config|
