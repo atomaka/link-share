@@ -20,7 +20,7 @@ gem 'tzinfo-data'
 
 group :development do
   gem 'rspec'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'factory_girl'
   gem 'database_cleaner'
   gem 'launchy'
