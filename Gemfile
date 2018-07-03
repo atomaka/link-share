@@ -25,6 +25,6 @@ group :development do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'pry'
-  gem 'rerun'
+  gem 'rerun', '>= 0.11.0'
   gem 'rake'
 end
