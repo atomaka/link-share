@@ -26,5 +26,5 @@ group :development do
   gem 'launchy'
   gem 'pry'
   gem 'rerun'
-  gem 'rake'
+  gem 'rake', '>= 12.3.3'
 end
