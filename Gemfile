@@ -20,7 +20,7 @@ gem 'tzinfo-data'
 
 group :development do
   gem 'rspec'
-  gem 'poltergeist'
+  gem 'poltergeist', '>= 1.16.0'
   gem 'factory_girl'
   gem 'database_cleaner'
   gem 'launchy'
