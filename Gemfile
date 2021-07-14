@@ -7,7 +7,7 @@ gem 'sqlite3'
 gem 'sinatra-activerecord'
 gem 'sinatra-contrib', require: false
 gem 'sinatra-flash'
-gem 'validate_url'
+gem 'validate_url', '>= 1.0.2'
 
 gem 'slim'
 
@@ -20,10 +20,10 @@ gem 'tzinfo-data'
 
 group :development do
   gem 'rspec'
-  gem 'poltergeist'
+  gem 'poltergeist', '>= 1.16.0'
   gem 'factory_girl'
   gem 'database_cleaner'
-  gem 'launchy'
+  gem 'launchy', '>= 2.4.3'
   gem 'pry'
   gem 'rerun'
   gem 'rake'
