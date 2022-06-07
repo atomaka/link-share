@@ -11,7 +11,7 @@ gem 'validate_url'
 
 gem 'slim'
 
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk', '~> 2', '>= 2.10.53'
 gem 'dotenv'
 
 gem 'bigdecimal'
