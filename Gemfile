@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'activerecord'
+gem 'activerecord', '>= 5.2.8.1'
 gem 'sinatra'
 gem 'sqlite3'
 
