@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'activerecord'
-gem 'sinatra'
+gem 'sinatra', '>= 2.2.3'
 gem 'sqlite3'
 
 gem 'sinatra-activerecord'
-gem 'sinatra-contrib', require: false
+gem 'sinatra-contrib', '>= 2.2.3', require: false
 gem 'sinatra-flash'
 gem 'validate_url'
 
