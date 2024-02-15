@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'activerecord'
-gem 'sinatra'
+gem 'sinatra', '>= 4.0.0'
 gem 'sqlite3'
 
-gem 'sinatra-activerecord'
-gem 'sinatra-contrib', require: false
+gem 'sinatra-activerecord', '>= 2.0.14'
+gem 'sinatra-contrib', '>= 4.0.0', require: false
 gem 'sinatra-flash'
 gem 'validate_url'
 
@@ -20,7 +20,7 @@ gem 'tzinfo-data'
 
 group :development do
   gem 'rspec'
-  gem 'poltergeist'
+  gem 'poltergeist', '>= 1.17.0'
   gem 'factory_girl'
   gem 'database_cleaner'
   gem 'launchy'
